@@ -1,4 +1,4 @@
-package com.example.geomob.DataClasses
+package com.example.geomob.Classes
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -11,5 +11,4 @@ data class Pays(@PrimaryKey val codePays: String,
                 var descriptionPays: String,
                 var surface: Long,
                 var population: Long,
-                var hymne: Int,
                 var seen : Boolean){}

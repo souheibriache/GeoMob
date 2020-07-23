@@ -1,12 +1,11 @@
-package com.example.geomob.DataClasses
+package com.example.geomob.Classes
 
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import com.example.geomob.DataClasses.Pays
 
-@Entity(tableName = "PaysPhoto",
+@Entity(tableName = "Evenement",
     foreignKeys = [ForeignKey(
         entity = Pays::class,
         parentColumns = arrayOf("codePays"),
@@ -14,6 +13,7 @@ import com.example.geomob.DataClasses.Pays
         onDelete = ForeignKey.CASCADE
     )]
 )
-data class PaysPhoto (@PrimaryKey val idPaysPhoto: Int,
-                        val urlPhoto: String,
+data class Evenement (@PrimaryKey(autoGenerate = true) val idEvenement: Long?,
+                        val date : String,
+                        var description : String,
                         val codePays : String) {}

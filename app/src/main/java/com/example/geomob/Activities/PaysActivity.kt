@@ -3,11 +3,10 @@ package com.example.geomob.Activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.geomob.Adapters.CountryPagesAdapter
-import com.example.geomob.Database.PaysDatabase
 import com.example.geomob.R
-import com.example.geomob.Threads.AppExecutors
 import kotlinx.android.synthetic.main.activity_pays.*
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class PaysActivity : AppCompatActivity() {
 
     private val NUM_PAGES = 3

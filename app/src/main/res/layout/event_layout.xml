@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="10dp"
@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-t
+
         <TextView
             android:id="@+id/evenTitle"
             android:layout_width="match_parent"
@@ -39,4 +39,4 @@ t
     </RelativeLayout>
 
 
-</androidx.cardview.widget.CardView>
+</RelativeLayout>

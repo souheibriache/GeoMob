@@ -6,16 +6,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.geomob.Activities.PaysActivity
-import com.example.geomob.DataClasses.PaysPhoto
-import com.example.geomob.Fragments.VideosFragment
+import com.example.geomob.Classes.PaysPhoto
 import com.example.geomob.R
 import com.squareup.picasso.Picasso
-import de.hdodenhof.circleimageview.CircleImageView
 
 
 class PhotosAdapter(val activity : PaysActivity, val list : ArrayList<PaysPhoto>) : RecyclerView.Adapter<PhotosAdapter.PaysPhotoViewHolder>(){
     class PaysPhotoViewHolder(v : View) : RecyclerView.ViewHolder(v){
-        val paysPhotoImage = v.findViewById<ImageView>(R.id.paysPhotoView)
+        val paysPhotoImage: ImageView = v.findViewById<ImageView>(R.id.paysPhotoView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PaysPhotoViewHolder {

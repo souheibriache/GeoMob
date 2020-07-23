@@ -1,7 +1,6 @@
 package com.example.geomob.Fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,14 +8,15 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.geomob.Activities.PaysActivity
 import com.example.geomob.Adapters.TweetAdapter
-import com.example.geomob.DataClasses.Tweet
+import com.example.geomob.Classes.Tweet
 import com.example.geomob.R
-import com.example.geomob.Threads.AppExecutors
+import com.example.geomob.AppExecutors
 import kotlinx.android.synthetic.main.fragment_videos.*
 import twitter4j.*
 import twitter4j.conf.ConfigurationBuilder
 
 
+@Suppress("NAME_SHADOWING")
 class TweetsFragment : Fragment() {
 
     private var countryCode = ""
@@ -44,42 +44,6 @@ class TweetsFragment : Fragment() {
         initTwitter()
 
 
-        /*val tweetUrl = "https://api.twitter.com/1.1/search/tweets.json?q=$countryName&lang=en&count=30&tweet_mode=extended"
-        //val tweetUrl = "https://ptsv2.com/t/9ukhq-1592581274/post"
-        val request = object : CustomRequest(
-            Method.GET,
-            tweetUrl,
-            Response.Listener {
-                Log.i("response", it.statusCode.toString() + "   "+it.data)
-
-
-            },
-            Response.ErrorListener {
-                val err = String(it.networkResponse.data)
-                Log.i("response","error:"+err)
-            }
-        ) {
-            override fun getHeaders(): MutableMap<String, String> {
-                var headers: MutableMap<String, String> = mutableMapOf()
-                val ts = System.currentTimeMillis()/1000
-                val nonce = (1..Int.MAX_VALUE).random()
-
-                headers["Accept"] = "*"
-                headers["Authorization"] = "OAuth oauth_consumer_key=\"$consumerKey\"," +
-                        "oauth_nonce= \"$nonce\"," +
-                        "oauth_signature_method=\"HMAC-SHA1\", oauth_timestamp=\"$ts\"," +
-                        "oauth_token=\"$accessToken\", oauth_version=\"1.0\"," +
-                        "oauth_signature=\"%2F%2Fl0JcVySsYDZVZxDZUWgz8iRmA%3D\""
-
-                return headers
-            }
-
-
-
-
-
-        }
-        Volley.newRequestQueue(activity).add(request)*/
     }
 
     override fun onCreateView(
@@ -90,7 +54,7 @@ class TweetsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_tweets, container, false)
     }
     
-    fun initTwitter(){
+    private fun initTwitter(){
         AppExecutors.instance!!.diskIO().execute {
             val consumerKey = "Na9iLBHIupFXEoGwQL0zyaSEs"
             val consumerKeySecret = "CuK8ZUmFSY9VU4Xw0s5YSwgMvhyM4FjN2dywbqLNwaC05wyHkv"
@@ -113,7 +77,7 @@ class TweetsFragment : Fragment() {
 
     }
     
-    fun searchQuery(twitter : Twitter, query : String){
+    private fun searchQuery(twitter : Twitter, query : String){
         try {
             val query = Query(query)
             val result: QueryResult

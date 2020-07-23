@@ -1,4 +1,4 @@
-package com.example.geomob.Threads
+package com.example.geomob
 
 import android.os.Handler
 import android.os.Looper

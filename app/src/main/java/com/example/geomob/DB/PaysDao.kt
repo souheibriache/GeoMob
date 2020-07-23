@@ -1,7 +1,7 @@
-package com.example.geomob.Database
+package com.example.geomob.DB
 
 import androidx.room.*
-import com.example.geomob.DataClasses.*
+import com.example.geomob.Classes.*
 
 @Dao
 interface PaysDao {
@@ -31,28 +31,28 @@ interface PaysDao {
     fun addTweet(tweet: Tweet)
 
     @Update
-    fun modifyPays(pays: Pays)
+    fun updatePays(pays: Pays)
 
     @Update
-    fun modifyRessource(ressource: Ressource)
+    fun updateRessource(ressource: Ressource)
 
     @Update
-    fun modifyEvenement(evenement: Evenement)
+    fun updateEvenement(evenement: Evenement)
 
     @Update
-    fun modifyPaysPhoto(paysPhoto: PaysPhoto)
+    fun updatePaysPhoto(paysPhoto: PaysPhoto)
 
     @Update
-    fun modifyPaysVideo(paysVideo: PaysVideo)
+    fun updatePaysVideo(paysVideo: PaysVideo)
 
     @Update
-    fun modifyPersonalite(personalite: Personalite)
+    fun updatePersonalite(personalite: Personalite)
 
     @Update
-    fun modifyPersonalitePhoto(personalitePhoto: PersonalitePhoto)
+    fun updatePersonalitePhoto(personalitePhoto: PersonalitePhoto)
 
     @Update
-    fun modifyTweet(tweet: Tweet)
+    fun updateTweet(tweet: Tweet)
 
     @Delete
     fun deletePays(pays: Pays)
@@ -79,37 +79,37 @@ interface PaysDao {
     fun deleteTweet(tweet: Tweet)
 
     @Query("Select * from Pays Order By seen DESC, nomPays")
-    fun loadAllPays(): List<Pays>
+    fun getAllPays(): List<Pays>
 
     @Query("Select * from Pays WHERE seen = 0")
-    fun loadUnseenPays(): List<Pays>
+    fun getUnseenPays(): List<Pays>
 
     @Query("Select * from Pays Where codePays = :countryCode")
     fun findPaysByCountryCode(countryCode : String): List<Pays>
 
     @Query("Select * from Ressource")
-    fun loadAllRessources(): List<Ressource>
+    fun getAllRessources(): List<Ressource>
 
     @Query("Select * from Ressource where codePays = :countryCode")
-    fun loadAllRessourcesByCountryCode(countryCode : String): List<Ressource>
+    fun getAllRessourcesByCountryCode(countryCode : String): List<Ressource>
 
     @Query("Select * from Personlaite where codePays = :countryCode")
-    fun loadAllPersonalitesByPaysCountryCode(countryCode : String): List<Personalite>
+    fun getAllPersonalitesByPaysCountryCode(countryCode : String): List<Personalite>
 
     @Query("Select * from Tweet where codePays = :countryCode")
-    fun loadAllTweetsByPaysCountryCode(countryCode : String): List<Tweet>
+    fun getAllTweetsByPaysCountryCode(countryCode : String): List<Tweet>
 
     @Query("Select * from PaysPhoto where codePays = :countryCode")
-    fun loadAllPaysPhotoByPaysCountryCode(countryCode : String): List<PaysPhoto>
+    fun getAllPaysPhotoByPaysCountryCode(countryCode : String): List<PaysPhoto>
 
     @Query("Select * from PaysVideo where codePays = :countryCode")
-    fun loadAllPaysVideoByPaysCountryCode(countryCode : String): List<PaysVideo>
+    fun getAllPaysVideoByPaysCountryCode(countryCode : String): List<PaysVideo>
 
     @Query("Select * from Evenement where codePays = :countryCode")
-    fun loadAllEvenementByPaysCountryCode(countryCode : String): List<Evenement>
+    fun getAllEvenementByPaysCountryCode(countryCode : String): List<Evenement>
 
     @Query("Select * from PersonalitePhoto where idPersonalite = :personaliteId")
-    fun loadAllPersonalitesPhotoByPaysId(personaliteId : Long): List<PersonalitePhoto>
+    fun getAllPersonalitesPhotoByPaysId(personaliteId : Long): List<PersonalitePhoto>
 
     @Query("Update Pays SET seen = 1 WHERE codePays = :countryCode")
     fun markAsSeen(countryCode: String)

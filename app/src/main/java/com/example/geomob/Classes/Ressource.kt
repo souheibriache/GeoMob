@@ -1,11 +1,10 @@
-package com.example.geomob.DataClasses
+package com.example.geomob.Classes
 
 
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import com.example.geomob.DataClasses.Pays
 
 @Entity(tableName = "Ressource",
     foreignKeys = [ForeignKey(entity = Pays::class,

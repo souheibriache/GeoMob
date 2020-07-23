@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.geomob.Activities.PaysActivity
-import com.example.geomob.DataClasses.Tweet
+import com.example.geomob.Classes.Tweet
 import com.example.geomob.R
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
@@ -15,11 +15,11 @@ import de.hdodenhof.circleimageview.CircleImageView
 
 class TweetAdapter(val activity : PaysActivity, val list : ArrayList<Tweet>) : RecyclerView.Adapter<TweetAdapter.TweetViewHolder>(){
     class TweetViewHolder(v : View) : RecyclerView.ViewHolder(v){
-        val userImage = v.findViewById<CircleImageView>(R.id.userImageView)
-        val userName = v.findViewById<TextView>(R.id.userNameView)
-        val screenName = v.findViewById<TextView>(R.id.screenNameView)
-        val tweetCnt = v.findViewById<TextView>(R.id.tweetContentView)
-        val tweetImg = v.findViewById<ImageView>(R.id.tweetImageView)
+        val userImage: CircleImageView = v.findViewById<CircleImageView>(R.id.userImageView)
+        val userName: TextView = v.findViewById<TextView>(R.id.userNameView)
+        val screenName: TextView = v.findViewById<TextView>(R.id.screenNameView)
+        val tweetCnt: TextView = v.findViewById<TextView>(R.id.tweetContentView)
+        val tweetImg: ImageView = v.findViewById<ImageView>(R.id.tweetImageView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TweetViewHolder {

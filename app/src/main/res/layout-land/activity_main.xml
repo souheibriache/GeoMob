@@ -17,7 +17,7 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/mapView"
+
             android:background="#F1F1F1"
             android:padding="3dp"
             android:text="List of countries"
@@ -45,10 +45,5 @@
         </ScrollView>
     </LinearLayout>
 
-    <com.mapbox.mapboxsdk.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_weight="0.5" />
+
 </LinearLayout>

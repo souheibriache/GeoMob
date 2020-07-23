@@ -14,17 +14,17 @@ class CountryPagesAdapter(private val myContext: Context, fm: FragmentManager, i
 
     // this is for fragment tabs
     override fun getItem(position: Int): Fragment {
-        when (position) {
+        return when (position) {
             0 -> {
-                return MainFragment()
+                MainFragment()
             }
             1 -> {
-                return VideosFragment()
+                VideosFragment()
             }
             2 -> {
-                return TweetsFragment()
+                TweetsFragment()
             }
-            else -> return MainFragment()
+            else -> MainFragment()
         }
     }
 

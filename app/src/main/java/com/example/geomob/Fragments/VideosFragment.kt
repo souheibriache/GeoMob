@@ -12,8 +12,8 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.example.geomob.Activities.PaysActivity
 import com.example.geomob.Adapters.VideoAdapter
-import com.example.geomob.DataClasses.*
-import com.example.geomob.Other.RequestHandler
+import com.example.geomob.Classes.*
+import com.example.geomob.RequestHandler
 
 import com.example.geomob.R
 import kotlinx.android.synthetic.main.fragment_videos.*

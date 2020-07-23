@@ -13,19 +13,14 @@
         android:orientation="vertical">
 
 
-        <com.mapbox.mapboxsdk.maps.MapView
-            android:id="@+id/mapView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_alignParentTop="true"
-            android:layout_weight="0.4" />
+
 
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/mapView"
-            android:background="#F1F1F1"
+
+
             android:padding="5dp"
             android:text="List of countries"
             android:textAlignment="center"

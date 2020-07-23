@@ -1,10 +1,10 @@
-package com.example.geomob.Database
+package com.example.geomob.DB
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.geomob.DataClasses.*
+import com.example.geomob.Classes.*
 
 // Annotates class to be a Room Database with a table (entity) of the Word class
 @Database(entities = [Pays::class,
@@ -14,7 +14,7 @@ import com.example.geomob.DataClasses.*
                     PaysPhoto::class,
                     PaysVideo::class,
                     PersonalitePhoto::class,
-                    Tweet::class], version = 1, exportSchema = false)
+                    Tweet::class], version = 2, exportSchema = false)
 
 abstract class PaysDatabase : RoomDatabase() {
 
